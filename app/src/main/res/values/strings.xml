@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">DSwipecards</string>
     <string name="hello_world">hello world</string>
+    <string name="facebook_app_id">1076090482518041</string>
+    <string name="title_activity_logout">logout screen</string>
 </resources>

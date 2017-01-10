@@ -1,10 +1,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical"
-              tools:context=".MainActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
     <!-- activity view -->
     <FrameLayout
@@ -17,7 +17,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#dee3e6"
-            app:rotation_degrees="15.5"/>
+            app:rotation_degrees="15.5" />
+
+        <TextView
+            android:id="@+id/buttonLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:background="#494949"
+            android:padding="5dp"
+            android:text="Logout from Facebook"
+            android:textColor="#fff" />
 
     </FrameLayout>
 

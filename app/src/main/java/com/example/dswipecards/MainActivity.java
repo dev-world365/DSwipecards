@@ -1,6 +1,7 @@
 package com.example.dswipecards;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.dswipecards.tindercard.FlingCardListener;
 import com.example.dswipecards.tindercard.SwipeFlingAdapterView;
+import com.facebook.login.LoginManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +32,9 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
     public static ViewHolder viewHolder;
     private ArrayList<CardData> al;
     private SwipeFlingAdapterView flingContainer;
+
+    //facebook logout button
+    private TextView buttonLogout;
 
     public static void removeBackground() {
         viewHolder.background.setVisibility(View.GONE);
@@ -217,7 +222,7 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
             @Override
             public void onScroll(float scrollProgressPercent) {
                 View view = flingContainer.getSelectedView();
-                if (view!=null) { //cammy add if condition to resolve Issue01
+                if (view != null) { //cammy add if condition to resolve Issue01
                     view.findViewById(R.id.background).setAlpha(0);
                     view.findViewById(R.id.item_swipe_right_indicator).setAlpha(scrollProgressPercent < 0 ? -scrollProgressPercent : 0);
                     view.findViewById(R.id.item_swipe_left_indicator).setAlpha(scrollProgressPercent > 0 ? scrollProgressPercent : 0);
@@ -238,6 +243,28 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
                 makeToast(MainActivity.this, "Clicked!");
             }
         });
+
+        //facebook logout button logic
+        buttonLogout = (TextView) findViewById(R.id.buttonLogout);
+        if (buttonLogout != null) {
+            System.out.println("button logout is not null");
+            buttonLogout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    PrefUtils.clearCurrentUser(MainActivity.this);
+
+                    // We can logout from facebook by calling following method
+                    LoginManager.getInstance().logOut();
+
+                    //Return to login page
+                    Intent i = new Intent(MainActivity.this, LoginActivity.class);
+                    startActivity(i);
+                    finish();
+                }
+            });
+        } else {
+            System.out.println("button logout is null");
+        }
 
     }
 
@@ -305,6 +332,8 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
             if (rowView == null) {
 
                 LayoutInflater inflater = getLayoutInflater();
+
+                //This is where item.xml is displayed
                 rowView = inflater.inflate(R.layout.item, parent, false);
                 // configure view holder
                 viewHolder = new ViewHolder();
