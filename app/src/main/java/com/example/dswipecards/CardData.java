@@ -11,9 +11,12 @@ public class CardData {
 
     private String imagePath;
 
-    public CardData(String imagePath, String description) {
+    private String videoPath;
+
+    public CardData(String imagePath, String description, String videoPath) {
         this.imagePath = imagePath;
         this.description = description;
+        this.videoPath = videoPath;
     }
 
     public String getDescription() {
@@ -23,5 +26,7 @@ public class CardData {
     public String getImagePath() {
         return imagePath;
     }
+
+    public String getVideoPath() { return videoPath; }
 
 }

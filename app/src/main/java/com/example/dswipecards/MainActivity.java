@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -59,115 +60,115 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
         //load 400 photos
         int counter = 0;
         while (counter < 4) {
-            al.add(new CardData("http://www.benairyresearch.net/dev/img01.jpg", "1. Leo, 38\nUNSW"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img02.jpg", "2. Harry, 32\nUniSys"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img03.jpg", "3. Joe, 29\nColes"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img04.jpg", "4. Brad, 21\nIBM"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img05.jpg", "5. Lucy, 30\nMyer"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img06.jpg", "6. Angel, 35\nPriceline"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img07.jpg", "7. Jane, 32\nNoni B"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img08.jpg", "8. Jenni, 30\nHollier"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img09.jpg", "9. Amy, 39\nColes"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img10.jpg", "10. April, 35\nTech"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img01.jpg", "1. Leo, 38\nUNSW", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img02.jpg", "2. Harry, 32\nUniSys", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img03.jpg", "3. Joe, 29\nColes", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img04.jpg", "4. Brad, 21\nIBM", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img05.jpg", "5. Lucy, 30\nMyer", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img06.jpg", "6. Angel, 35\nPriceline", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img07.jpg", "7. Jane, 32\nNoni B", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img08.jpg", "8. Jenni, 30\nHollier", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img09.jpg", "9. Amy, 39\nColes", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img10.jpg", "10. April, 35\nTech", "http://www.benairyresearch.net/dev/myVid02.mp4"));
 
-            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "11. "));
-            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "12. "));
-            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "13. "));
-            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "14. "));
-            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "15. "));
-            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "16. "));
-            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "17. "));
-            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "18. "));
-            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "19. "));
-            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "20. "));
+            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "11. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "12. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "13. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "14. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "15. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "16. ", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "17. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "18. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "19. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "20. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
 
-            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "21. "));
-            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "22. "));
-            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "23. "));
-            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "24. "));
-            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "25. "));
-            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "26. "));
-            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "27. "));
-            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "28. "));
-            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "29. "));
-            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "30. "));
+            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "21. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "22. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "23. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "24. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "25. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "26. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "27. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "28. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "29. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "30. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
 
-            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "31. "));
-            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "32. "));
-            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "33. "));
-            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "34. "));
-            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "35. "));
-            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "36. "));
-            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "37. "));
-            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "38. "));
-            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "39. "));
-            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "40. "));
+            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "31. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "32. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "33. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "34. ", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "35. ", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "36. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "37. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "38. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "39. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "40. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
 
-            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "41. "));
-            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "42. "));
-            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "43. "));
-            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "44. "));
-            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "45. "));
-            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "46. "));
-            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "47. "));
-            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "48. "));
-            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "49. "));
-            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "50. "));
+            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "41. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "42. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "43. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "44. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "45. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "46. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "47. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "48. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "49. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "50. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
 
-            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "51. "));
-            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "52. "));
-            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "53. "));
-            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "54. "));
-            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "55. "));
-            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "56. "));
-            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "57. "));
-            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "58. "));
-            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "59. "));
-            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "60. "));
+            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "51. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "52. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "53. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "54. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "55. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "56. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "57. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "58. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "59. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "60. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
 
-            al.add(new CardData("http://www.benairyresearch.net/dev/img01.jpg", "1. Leo, 38\nUNSW"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img02.jpg", "2. Harry, 32\nUniSys"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img03.jpg", "3. Joe, 29\nColes"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img04.jpg", "4. Brad, 21\nIBM"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img05.jpg", "5. Lucy, 30\nMyer"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img06.jpg", "6. Angel, 35\nPriceline"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img07.jpg", "7. Jane, 32\nNoni B"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img08.jpg", "8. Jenni, 30\nHollier"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img09.jpg", "9. Amy, 39\nColes"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img10.jpg", "70. April, 35\nTech"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img01.jpg", "1. Leo, 38\nUNSW", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img02.jpg", "2. Harry, 32\nUniSys", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img03.jpg", "3. Joe, 29\nColes", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img04.jpg", "4. Brad, 21\nIBM", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img05.jpg", "5. Lucy, 30\nMyer", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img06.jpg", "6. Angel, 35\nPriceline", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img07.jpg", "7. Jane, 32\nNoni B", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img08.jpg", "8. Jenni, 30\nHollier", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img09.jpg", "9. Amy, 39\nColes", "http://www.benairyresearch.net/dev/myVid03.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img10.jpg", "70. April, 35\nTech", "http://www.benairyresearch.net/dev/myVid03.mp4"));
 
-            al.add(new CardData("http://www.benairyresearch.net/dev/img01.jpg", "1. Leo, 38\nUNSW"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img02.jpg", "2. Harry, 32\nUniSys"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img03.jpg", "3. Joe, 29\nColes"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img04.jpg", "4. Brad, 21\nIBM"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img05.jpg", "5. Lucy, 30\nMyer"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img06.jpg", "6. Angel, 35\nPriceline"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img07.jpg", "7. Jane, 32\nNoni B"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img08.jpg", "8. Jenni, 30\nHollier"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img09.jpg", "9. Amy, 39\nColes"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img10.jpg", "80. April, 35\nTech"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img01.jpg", "1. Leo, 38\nUNSW", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img02.jpg", "2. Harry, 32\nUniSys", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img03.jpg", "3. Joe, 29\nColes", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img04.jpg", "4. Brad, 21\nIBM", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img05.jpg", "5. Lucy, 30\nMyer", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img06.jpg", "6. Angel, 35\nPriceline", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img07.jpg", "7. Jane, 32\nNoni B", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img08.jpg", "8. Jenni, 30\nHollier", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img09.jpg", "9. Amy, 39\nColes", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img10.jpg", "80. April, 35\nTech", "http://www.benairyresearch.net/dev/myVid02.mp4"));
 
-            al.add(new CardData("http://www.benairyresearch.net/dev/img01.jpg", "1. Leo, 38\nUNSW"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img02.jpg", "2. Harry, 32\nUniSys"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img03.jpg", "3. Joe, 29\nColes"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img04.jpg", "4. Brad, 21\nIBM"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img05.jpg", "5. Lucy, 30\nMyer"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img06.jpg", "6. Angel, 35\nPriceline"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img07.jpg", "7. Jane, 32\nNoni B"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img08.jpg", "8. Jenni, 30\nHollier"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img09.jpg", "9. Amy, 39\nColes"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img10.jpg", "90. April, 35\nTech"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img01.jpg", "1. Leo, 38\nUNSW", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img02.jpg", "2. Harry, 32\nUniSys", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img03.jpg", "3. Joe, 29\nColes", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img04.jpg", "4. Brad, 21\nIBM", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img05.jpg", "5. Lucy, 30\nMyer", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img06.jpg", "6. Angel, 35\nPriceline", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img07.jpg", "7. Jane, 32\nNoni B", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img08.jpg", "8. Jenni, 30\nHollier", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img09.jpg", "9. Amy, 39\nColes", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img10.jpg", "90. April, 35\nTech", "http://www.benairyresearch.net/dev/myVid02.mp4"));
 
-            al.add(new CardData("http://www.benairyresearch.net/dev/img01.jpg", "1. Leo, 38\nUNSW"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img02.jpg", "2. Harry, 32\nUniSys"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img03.jpg", "3. Joe, 29\nColes"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img04.jpg", "4. Brad, 21\nIBM"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img05.jpg", "5. Lucy, 30\nMyer"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img06.jpg", "6. Angel, 35\nPriceline"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img07.jpg", "7. Jane, 32\nNoni B"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img08.jpg", "8. Jenni, 30\nHollier"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img09.jpg", "9. Amy, 39\nColes"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img10.jpg", "100. April, 35\nTech"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img01.jpg", "1. Leo, 38\nUNSW", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img02.jpg", "2. Harry, 32\nUniSys", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img03.jpg", "3. Joe, 29\nColes", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img04.jpg", "4. Brad, 21\nIBM", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img05.jpg", "5. Lucy, 30\nMyer", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img06.jpg", "6. Angel, 35\nPriceline", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img07.jpg", "7. Jane, 32\nNoni B", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img08.jpg", "8. Jenni, 30\nHollier", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img09.jpg", "9. Amy, 39\nColes", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img10.jpg", "100. April, 35\nTech", "http://www.benairyresearch.net/dev/myVid02.mp4"));
 
             counter++;
         }
@@ -266,7 +267,7 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
             System.out.println("button logout is null");
         }
 
-    }
+    } //end method onCreate()
 
     static void makeToast(Context ctx, String s) {
         Toast.makeText(ctx, s, Toast.LENGTH_SHORT).show();
@@ -295,22 +296,23 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
         public static FrameLayout background;
         public TextView DataText;
         public ImageView cardImage;
+        public Button playVideoButton;
 
     }
 
     public class MyAppAdapter extends BaseAdapter {
 
-        public List<CardData> parkingList;
+        public List<CardData> cardDataList;
         public Context context;
 
         private MyAppAdapter(List<CardData> apps, Context context) {
-            this.parkingList = apps;
+            this.cardDataList = apps;
             this.context = context;
         }
 
         @Override
         public int getCount() {
-            return parkingList.size();
+            return cardDataList.size();
         }
 
         @Override
@@ -340,14 +342,34 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
                 viewHolder.DataText = (TextView) rowView.findViewById(R.id.bookText);
                 viewHolder.background = (FrameLayout) rowView.findViewById(R.id.background);
                 viewHolder.cardImage = (ImageView) rowView.findViewById(R.id.cardImage);
+                //get play video button
+                viewHolder.playVideoButton = (Button) rowView.findViewById(R.id.play_video_button);
                 rowView.setTag(viewHolder);
 
             } else {
                 viewHolder = (ViewHolder) convertView.getTag();
             }
-            viewHolder.DataText.setText(parkingList.get(position).getDescription() + "");
+            viewHolder.DataText.setText(cardDataList.get(position).getDescription() + "");
 
-            Glide.with(MainActivity.this).load(parkingList.get(position).getImagePath()).into(viewHolder.cardImage);
+            Glide.with(MainActivity.this).load(cardDataList.get(position).getImagePath()).into(viewHolder.cardImage);
+
+            //Start to play video when button is clicked
+            try {
+                viewHolder.playVideoButton.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View view) {
+
+                        //Start a new Activity to play video on a new page
+                        Intent intent = new Intent(view.getContext(), PlayVideoActivity.class);
+                        //pass over the videoPath
+                        String videoPath = cardDataList.get(position).getVideoPath();
+                        intent.putExtra("VideoPath", videoPath);
+                        startActivity(intent);
+                    }
+                });
+            }
+            catch (Exception e){
+                System.out.println("Button listener cannot be added");
+            }
 
             return rowView;
         }

@@ -1,6 +1,6 @@
 package com.example.dswipecards;
 
-import android.app.ProgressDialog;
+//import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -25,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
     private CallbackManager callbackManager;
     private LoginButton loginButton;
     private TextView btnLogin;
-    private ProgressDialog progressDialog;
+    //private ProgressDialog progressDialog;
     User user;
 
     @Override
@@ -62,9 +62,9 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                progressDialog = new ProgressDialog(LoginActivity.this);
-                progressDialog.setMessage("Loading 123...");
-                progressDialog.show();
+                //progressDialog = new ProgressDialog(LoginActivity.this);
+                //progressDialog.setMessage("Loading 123...");
+                //progressDialog.show();
 
                 loginButton.performClick();
                 loginButton.setPressed(true);
@@ -87,7 +87,7 @@ public class LoginActivity extends AppCompatActivity {
     private FacebookCallback<LoginResult> mCallBack = new FacebookCallback<LoginResult>() {
         @Override
         public void onSuccess(LoginResult loginResult) {
-            progressDialog.dismiss();
+            //progressDialog.dismiss();
 
             // App code
             GraphRequest request = GraphRequest.newMeRequest(
@@ -128,12 +128,12 @@ public class LoginActivity extends AppCompatActivity {
 
         @Override
         public void onCancel() {
-            progressDialog.dismiss();
+            //progressDialog.dismiss();
         }
 
         @Override
         public void onError(FacebookException e) {
-            progressDialog.dismiss();
+            //progressDialog.dismiss();
         }
     };
 }

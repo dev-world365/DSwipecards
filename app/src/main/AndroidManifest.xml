@@ -14,12 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!--This must be added to perform facebook login-->
+        <!-- This must be added to perform facebook login -->
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
 
-        <!--This is the fb login activity-->
+        <!-- This is the fb login activity -->
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,34 +28,35 @@
             </intent-filter>
         </activity>
 
-        <!--This is the fb log out activity-->
+        <!-- This is the fb log out activity -->
         <activity
             android:name=".LogoutActivity"
-            android:label="@string/title_activity_logout"></activity>
+            android:label="@string/title_activity_logout" />
 
-        <!--This must be added to perform fb login-->
+        <!-- This must be added to perform fb login -->
         <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            tools:replace="android:theme"></activity>
+            tools:replace="android:theme" />
 
-        <!--This is the main activity. I have removed intent-filter because the first activity to load is facebook login-->
-        <activity android:name=".MainActivity">
+        <!-- This is the main activity. I have removed intent-filter because the first activity to load is facebook login -->
+        <activity android:name=".MainActivity"></activity>
 
-        </activity>
-
-        <!-- below is commented away to let the above run-->
-        <!--&lt;!&ndash;This is the main activity&ndash;&gt;
+        <!-- below is commented away to let the above run -->
+        <!--
+        &lt;!&ndash;This is the main activity&ndash;&gt;
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>-->
+        </activity>
+        -->
 
+        <activity android:name=".PlayVideoActivity"></activity>
     </application>
 
 </manifest>
