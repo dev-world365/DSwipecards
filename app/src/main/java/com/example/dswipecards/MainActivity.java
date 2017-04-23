@@ -12,6 +12,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -195,6 +196,12 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
 
             @Override
             public void onLeftCardExit(Object dataObject) {
+
+                //Save details to database here
+                CardData cardData = al.get(0);
+                String description = cardData.getDescription();
+                Log.d("CARD-LEFT-EXIT", description);
+
                 al.remove(0);
                 myAppAdapter.notifyDataSetChanged();
                 makeToast(MainActivity.this, "Left!");
@@ -242,6 +249,24 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
 
                 myAppAdapter.notifyDataSetChanged();
                 makeToast(MainActivity.this, "Clicked!");
+
+                System.out.println("onItemClicked-itemPos " + itemPosition);
+                CardData cardData = al.get(0);
+                String description = cardData.getDescription();
+                Log.d("CLICK", description);
+                LinearLayout detailsPanel = (LinearLayout) view.findViewById(R.id.details_panel);
+                TextView details = (TextView) view.findViewById(R.id.more_details);
+                details.setText(description);
+
+                //toggle show/hide profile details panel
+                float transparent = 0.0f; //0 means transparent
+                if (detailsPanel.getAlpha() == transparent) {
+                    Log.d("alpha","alpha is 0");
+                    detailsPanel.setAlpha(0.85f); //display details panel if it is transparent
+                } else {
+                    Log.d("alpha","alpha is 1");
+                    detailsPanel.setAlpha(0); //set details panel to transparent if it is shown
+                }
             }
         });
 

@@ -208,7 +208,7 @@ public class FlingCardListener implements View.OnTouchListener {
                     .y(objectY)
                     .rotation(0);
             mFlingListener.onScroll(0.0f);
-            if (abslMoveDistance < 4.0) {
+            if (abslMoveDistance < 16.0) { //change to reduce click sensitivity
                 mFlingListener.onClick(dataObject);
             }
         }
