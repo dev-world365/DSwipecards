@@ -1,5 +1,6 @@
 package com.example.dswipecards;
 
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateInterpolator;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -250,19 +252,34 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
                 myAppAdapter.notifyDataSetChanged();
                 makeToast(MainActivity.this, "Clicked!");
 
-                System.out.println("onItemClicked-itemPos " + itemPosition);
                 CardData cardData = al.get(0);
                 String description = cardData.getDescription();
                 Log.d("CLICK", description);
                 LinearLayout detailsPanel = (LinearLayout) view.findViewById(R.id.details_panel);
                 TextView details = (TextView) view.findViewById(R.id.more_details);
                 details.setText(description);
-
+                float top = detailsPanel.getTop();
+                float bottom = detailsPanel.getBottom();
+                //System.out.printf("[Top]: %.2f \n",top);
+                //System.out.printf("[Bottom]: %.2f \n",bottom);
                 //toggle show/hide profile details panel
                 float transparent = 0.0f; //0 means transparent
                 if (detailsPanel.getAlpha() == transparent) {
                     Log.d("alpha","alpha is 0");
-                    detailsPanel.setAlpha(0.85f); //display details panel if it is transparent
+                    detailsPanel.setAlpha(1.0f); //display details panel if it is transparent (can set to 0.85 for translucent effect)
+
+                    //animate detailsPanel to slide up when click on card
+                    float topAfter = detailsPanel.getTop();
+                    float bottomAfter = detailsPanel.getBottom();
+                    //System.out.printf("[topAfter]: %.2f \n",topAfter);
+                    //System.out.printf("[bottomAfter]: %.2f \n",bottomAfter);
+
+                    ObjectAnimator heightAnimator = ObjectAnimator
+                            .ofFloat(detailsPanel, "y", bottomAfter, topAfter)
+                            .setDuration(100);
+                    heightAnimator.setInterpolator(new AccelerateInterpolator());
+                    heightAnimator.start();
+
                 } else {
                     Log.d("alpha","alpha is 1");
                     detailsPanel.setAlpha(0); //set details panel to transparent if it is shown
