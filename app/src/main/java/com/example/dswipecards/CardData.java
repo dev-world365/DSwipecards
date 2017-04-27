@@ -6,16 +6,18 @@ package com.example.dswipecards;
 
 public class CardData {
 
-    private String shortNameAge;
+    private String shortNameAge,imagePath, videoPath, workStudyLocation, distanceAway,
+            description, rating;
 
-    private String imagePath;
-
-    private String videoPath;
-
-    public CardData(String imagePath, String shortNameAge, String videoPath) {
+    public CardData(String imagePath, String videoPath, String shortNameAge,
+                    String workStudyLocation, String distanceAway, String description, String rating) {
         this.imagePath = imagePath;
-        this.shortNameAge = shortNameAge;
         this.videoPath = videoPath;
+        this.shortNameAge = shortNameAge;
+        this.workStudyLocation = workStudyLocation;
+        this.distanceAway = distanceAway;
+        this.description = description;
+        this.rating = rating;
     }
 
     public String getShortNameAge() {
@@ -28,4 +30,19 @@ public class CardData {
 
     public String getVideoPath() { return videoPath; }
 
+    public String getWorkStudyLocation() {
+        return workStudyLocation;
+    }
+
+    public String getDistanceAway() {
+        return distanceAway;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getRating() {
+        return rating;
+    }
 }

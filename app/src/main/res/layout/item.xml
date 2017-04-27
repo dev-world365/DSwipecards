@@ -124,7 +124,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:layout_marginBottom="25dp"
-        android:padding="10dp"
+        android:paddingTop="5dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
         android:background="#ffffff"
         android:orientation="vertical"
         android:alpha="0">
@@ -148,9 +150,8 @@
         <TextView
             android:id="@+id/distance_away"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.1"
-            android:textColor="#a1a1a1"
+            android:layout_height="wrap_content"
+            android:textColor="#bababa"
             android:textSize="18sp"
             android:text="1 km away"/>
 
@@ -166,10 +167,11 @@
         <TextView
             android:id="@+id/description"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:textColor="#7e7e7e"
             android:textSize="18sp"
-            android:text="Sand, surf and sun. Love food, oysters, cheese, beach, long walks, good chats, music, good music, parties and laughter."/>
+            android:gravity="center_vertical"
+            android:text="I love coffee."/>
 
         <TextView
             android:id="@+id/separator2"

@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,14 +39,8 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
     //facebook logout button
     private TextView buttonLogout;
 
-    public static void removeBackground() {
-        viewHolder.background.setVisibility(View.GONE);
-        myAppAdapter.notifyDataSetChanged();
-    }
-
 //    private ArrayAdapter<CardData> arrayAdapter;
 //    private int i;
-
 //    @InjectView(R.id.frame) SwipeFlingAdapterView flingContainer;
 
     @Override
@@ -61,10 +56,25 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
         //load 400 photos
         int counter = 0;
         while (counter < 1) {
-            al.add(new CardData("http://www.benairyresearch.net/dev/img01.jpg", "1. Leo, 38\nUNSW",
-                    "http://www.benairyresearch.net/dev/myVid02.mp4"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img02.jpg", "2. Harry, 32\nUniSys", "http://www.benairyresearch.net/dev/myVid03.mp4"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img03.jpg", "3. Joe, 29\nColes", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData(
+                    "http://www.benairyresearch.net/dev/img01.jpg",
+                    "http://www.benairyresearch.net/dev/myVid02.mp4",
+                    "Leo, 28\nMacquarie University",
+                    "Macquarie University",
+                    "5",
+                    "Sand, surf and sun. Love food, oysters, cheese, beach, long walks, " +
+                            "good chats, music, good music, parties and laughter." +
+                            "\n\nI love Australia!",
+                    "4"));
+            al.add(new CardData(
+                    "http://www.benairyresearch.net/dev/img02.jpg",
+                    "http://www.benairyresearch.net/dev/myVid03.mp4",
+                    "Harry, 32\nUniSys",
+                    "UniSys",
+                    "1",
+                    "Hook me up for good wine and party anytime.",
+                    "5"));
+//            al.add(new CardData("http://www.benairyresearch.net/dev/img03.jpg", "3. Joe, 29\nColes", "http://www.benairyresearch.net/dev/myVid02.mp4"));
 //            al.add(new CardData("http://www.benairyresearch.net/dev/img04.jpg", "4. Brad, 21\nIBM", "http://www.benairyresearch.net/dev/myVid02.mp4"));
 //            al.add(new CardData("http://www.benairyresearch.net/dev/img05.jpg", "5. Lucy, 30\nMyer", "http://www.benairyresearch.net/dev/myVid02.mp4"));
 //            al.add(new CardData("http://www.benairyresearch.net/dev/img06.jpg", "6. Angel, 35\nPriceline", "http://www.benairyresearch.net/dev/myVid02.mp4"));
@@ -239,7 +249,6 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
             }
         });
 
-
         // Optionally add an OnItemClickListener
         flingContainer.setOnItemClickListener(new SwipeFlingAdapterView.OnItemClickListener() {
             @Override
@@ -250,13 +259,9 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
                 myAppAdapter.notifyDataSetChanged();
                 //makeToast(MainActivity.this, "Clicked!");
 
-                CardData cardData = al.get(0);
-                String shortNameAge = cardData.getShortNameAge();
-
-                TextView longNameAge = (TextView) view.findViewById(R.id.long_name_age);
-                longNameAge.setText(shortNameAge);
-
                 showHideLongDetailsPanel(view);
+
+                setDataInLongDetailsPanel(view);
             }
         });
 
@@ -388,6 +393,11 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
         }
     }
 
+    public static void removeBackground() {
+        viewHolder.background.setVisibility(View.GONE);
+        myAppAdapter.notifyDataSetChanged();
+    }
+
     private void showHideLongDetailsPanel(View view) {
         LinearLayout longDetailsPanel = (LinearLayout) view.findViewById(R.id.long_details_panel);
         float top = longDetailsPanel.getTop();
@@ -416,5 +426,34 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
             Log.d("alpha","alpha is 1");
             longDetailsPanel.setAlpha(0); //set details panel to transparent if it is shown
         }
+    }
+
+    private void setDataInLongDetailsPanel(View view){
+        CardData cardData = al.get(0);
+
+        //Set Name and Age
+        TextView longNameAgeTV = (TextView) view.findViewById(R.id.long_name_age);
+        String shortNameAge = cardData.getShortNameAge();
+        longNameAgeTV.setText(shortNameAge);
+
+        //Set Work or Study Location
+        TextView workStudyLocationTV = (TextView) view.findViewById(R.id.work_study_location);
+        String workStudyLocation = cardData.getWorkStudyLocation();
+        workStudyLocationTV.setText(workStudyLocation);
+
+        //Set Distance Away
+        TextView distanceAwayTV = (TextView) view.findViewById(R.id.distance_away);
+        String distanceAway = cardData.getDistanceAway() + " km away";
+        distanceAwayTV.setText(distanceAway);
+
+        //Set Description
+        TextView descriptionTV = (TextView) view.findViewById(R.id.description);
+        String description = cardData.getDescription();
+        descriptionTV.setText(description);
+
+        //Set Rating
+        RatingBar ratingBar = (RatingBar) view.findViewById(R.id.ratingBar);
+        float starRating = Float.parseFloat(cardData.getRating());
+        ratingBar.setRating(starRating);
     }
 }
