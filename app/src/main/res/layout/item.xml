@@ -38,10 +38,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="70dp"
+    android:layout_marginBottom="40dp"
     android:layout_marginLeft="20dp"
     android:layout_marginRight="20dp"
-    android:layout_marginTop="70dp">
+    android:layout_marginTop="40dp">
 
     <FrameLayout
         android:id="@+id/background"
@@ -81,31 +81,33 @@
             android:id="@+id/cardImage"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.9"
+            android:layout_weight="0.85"
             android:scaleType="centerCrop" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="0.15"
+            android:padding="10dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/bookText"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
-                android:layout_weight="0.1"
+                android:layout_weight="1"
                 android:gravity="start|center_vertical"
                 android:textColor="#606060"
-                android:textSize="13sp"
+                android:textSize="20sp"
                 tools:text="Name, Age." />
 
             <Button
                 android:id="@+id/play_video_button"
                 style="@style/Widget.AppCompat.Button.Small"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
                 android:text="Video" />
 
         </LinearLayout>
@@ -115,19 +117,75 @@
     <LinearLayout
         android:id="@+id/details_panel"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginTop="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="25dp"
+        android:padding="10dp"
         android:background="#ffffff"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:alpha="0">
 
         <TextView
-            android:id="@+id/more_details"
+            android:id="@+id/name_age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#606060"
+            android:textSize="20sp"
+            android:text="Johnny, 29"/>
+
+        <TextView
+            android:id="@+id/work_study_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#606060"
+            android:textSize="20sp"
+            android:text="UNSW"/>
+
+        <TextView
+            android:id="@+id/distance_away"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:textColor="#a1a1a1"
+            android:textSize="18sp"
+            android:text="1 km away"/>
+
+        <TextView
+            android:id="@+id/separator"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="5px"
+            android:text=" "
+            android:background="#e4e4e4"/>
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#7e7e7e"
+            android:textSize="18sp"
+            android:text="Sand, surf and sun. Love food, oysters, cheese, beach, long walks, good chats, music, good music, parties and laughter."/>
+
+        <TextView
+            android:id="@+id/separator2"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="5px"
+            android:text=" "
+            android:background="#e4e4e4" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:theme="@style/RatingBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="30sp"
-            android:text="this is more details this is more details"></TextView>
+            android:isIndicator="true"
+            android:numStars="5"
+            android:rating="3"
+            android:layout_gravity="end"/>
 
     </LinearLayout>
 
@@ -136,13 +194,17 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="end"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="15dp"
         android:alpha="0"
-        android:background="@drawable/nope" />
+        android:background="@drawable/donotlike" />
 
     <View
         android:id="@+id/item_swipe_left_indicator"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
         android:alpha="0"
         android:background="@drawable/like" />
 

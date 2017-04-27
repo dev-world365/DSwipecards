@@ -26,7 +26,7 @@
             android:layout_gravity="end"
             android:background="#494949"
             android:padding="5dp"
-            android:text="Logout from Facebook"
+            android:text="Logout"
             android:textColor="#fff" />
 
     </FrameLayout>

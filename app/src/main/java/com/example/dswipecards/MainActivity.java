@@ -26,8 +26,6 @@ import com.facebook.login.LoginManager;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.ButterKnife;
-import butterknife.InjectView;
 import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity implements FlingCardListener.ActionDownInterface {
@@ -62,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
 
         //load 400 photos
         int counter = 0;
-        while (counter < 4) {
+        while (counter < 1) {
             al.add(new CardData("http://www.benairyresearch.net/dev/img01.jpg", "1. Leo, 38\nUNSW", "http://www.benairyresearch.net/dev/myVid02.mp4"));
             al.add(new CardData("http://www.benairyresearch.net/dev/img02.jpg", "2. Harry, 32\nUniSys", "http://www.benairyresearch.net/dev/myVid03.mp4"));
             al.add(new CardData("http://www.benairyresearch.net/dev/img03.jpg", "3. Joe, 29\nColes", "http://www.benairyresearch.net/dev/myVid02.mp4"));
@@ -71,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
             al.add(new CardData("http://www.benairyresearch.net/dev/img06.jpg", "6. Angel, 35\nPriceline", "http://www.benairyresearch.net/dev/myVid02.mp4"));
             al.add(new CardData("http://www.benairyresearch.net/dev/img07.jpg", "7. Jane, 32\nNoni B", "http://www.benairyresearch.net/dev/myVid02.mp4"));
             al.add(new CardData("http://www.benairyresearch.net/dev/img08.jpg", "8. Jenni, 30\nHollier", "http://www.benairyresearch.net/dev/myVid02.mp4"));
-            al.add(new CardData("http://www.benairyresearch.net/dev/img09.jpg", "9. Amy, 39\nColes", "http://www.benairyresearch.net/dev/myVid02.mp4"));
+            al.add(new CardData("http://www.benairyresearch.net/dev/img09.jpg", "9. Amy, 39\nMacquarie University, 2007", "http://www.benairyresearch.net/dev/myVid02.mp4"));
             al.add(new CardData("http://www.benairyresearch.net/dev/img10.jpg", "10. April, 35\nTech", "http://www.benairyresearch.net/dev/myVid02.mp4"));
 
             al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "11. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
@@ -206,7 +204,7 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
 
                 al.remove(0);
                 myAppAdapter.notifyDataSetChanged();
-                makeToast(MainActivity.this, "Left!");
+                //makeToast(MainActivity.this, "Left!");
                 //Do something on the left!
                 //You also have access to the original object.
                 //If you want to use it just cast it (String) dataObject
@@ -217,7 +215,7 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
             public void onRightCardExit(Object dataObject) {
                 al.remove(0);
                 myAppAdapter.notifyDataSetChanged();
-                makeToast(MainActivity.this, "Right!");
+                //makeToast(MainActivity.this, "Right!");
             }
 
             @Override
@@ -250,14 +248,14 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
                 view.findViewById(R.id.background).setAlpha(0);
 
                 myAppAdapter.notifyDataSetChanged();
-                makeToast(MainActivity.this, "Clicked!");
+                //makeToast(MainActivity.this, "Clicked!");
 
                 CardData cardData = al.get(0);
                 String description = cardData.getDescription();
                 Log.d("CLICK", description);
                 LinearLayout detailsPanel = (LinearLayout) view.findViewById(R.id.details_panel);
-                TextView details = (TextView) view.findViewById(R.id.more_details);
-                details.setText(description);
+                TextView nameAndAge = (TextView) view.findViewById(R.id.name_age);
+                nameAndAge.setText(description);
                 float top = detailsPanel.getTop();
                 float bottom = detailsPanel.getBottom();
                 //System.out.printf("[Top]: %.2f \n",top);
