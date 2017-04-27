@@ -49,6 +49,7 @@
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/background_2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="6dp"
@@ -59,6 +60,7 @@
             android:orientation="vertical" />
 
         <LinearLayout
+            android:id="@+id/background_1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="12dp"
@@ -71,6 +73,7 @@
     </FrameLayout>
 
     <LinearLayout
+        android:id="@+id/card_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="18dp"
@@ -78,13 +81,14 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/cardImage"
+            android:id="@+id/profile_image"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.85"
             android:scaleType="centerCrop" />
 
         <LinearLayout
+            android:id="@+id/short_details_panel"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.15"
@@ -92,7 +96,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/bookText"
+                android:id="@+id/short_name_age"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -115,7 +119,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/details_panel"
+        android:id="@+id/long_details_panel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
@@ -126,7 +130,7 @@
         android:alpha="0">
 
         <TextView
-            android:id="@+id/name_age"
+            android:id="@+id/long_name_age"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#606060"
@@ -190,7 +194,7 @@
     </LinearLayout>
 
     <View
-        android:id="@+id/item_swipe_right_indicator"
+        android:id="@+id/right_indicator_swipe"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="end"
@@ -200,7 +204,7 @@
         android:background="@drawable/donotlike" />
 
     <View
-        android:id="@+id/item_swipe_left_indicator"
+        android:id="@+id/left_indicator_swipe"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="15dp"

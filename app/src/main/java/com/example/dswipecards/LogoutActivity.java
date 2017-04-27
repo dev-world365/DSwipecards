@@ -33,7 +33,7 @@ public class LogoutActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logout);
         user = PrefUtils.getCurrentUser(LogoutActivity.this);
-        profileImage = (ImageView) findViewById(R.id.profileImage);
+        profileImage = (ImageView) findViewById(R.id.profile_image);
         name = (TextView)findViewById(R.id.name);
 
         // fetching facebook's profile picture

@@ -12,7 +12,7 @@
         android:id="@+id/textView2" />
 
     <ImageView
-        android:id="@+id/profileImage"
+        android:id="@+id/profile_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/profileImage"
+        android:layout_below="@+id/profile_image"
         android:id="@+id/name"
         />
 
