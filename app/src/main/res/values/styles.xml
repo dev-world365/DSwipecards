@@ -1,9 +1,13 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
         <!-- Customize your theme here. -->
+
+        <!-- colorPrimary is used for the default action bar background -->
         <item name="colorPrimary">@color/colorPrimary</item>
+
+        <!-- colorPrimaryDark is used for the status bar which shows battery and time -->
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>

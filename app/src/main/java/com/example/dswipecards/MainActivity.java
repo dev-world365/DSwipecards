@@ -5,14 +5,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
@@ -37,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
     private SwipeFlingAdapterView flingContainer;
 
     //facebook logout button
-    private TextView buttonLogout;
+//    private TextView buttonLogout;
 
 //    private ArrayAdapter<CardData> arrayAdapter;
 //    private int i;
@@ -49,6 +52,11 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
         setContentView(R.layout.activity_main);
         //ButterKnife.inject(this);
 
+        //Load Actionbar with app logo
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setLogo(R.drawable.name7);
+
         flingContainer = (SwipeFlingAdapterView) findViewById(R.id.frame);
 
         al = new ArrayList<>();
@@ -58,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
         while (counter < 1) {
             al.add(new CardData(
                     "http://www.benairyresearch.net/dev/img01.jpg",
-                    "http://www.benairyresearch.net/dev/myVid02.mp4",
+                    "http://www.benairyresearch.net/dev/Video1.mp4",
                     "Leo, 28\nMacquarie University",
                     "Macquarie University",
                     "5",
@@ -68,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
                     "4"));
             al.add(new CardData(
                     "http://www.benairyresearch.net/dev/img02.jpg",
-                    "http://www.benairyresearch.net/dev/myVid03.mp4",
+                    "http://www.benairyresearch.net/dev/Video2.mp4",
                     "Harry, 32\nUniSys",
                     "UniSys",
                     "1",
@@ -193,7 +201,6 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
 //        al.add("css");
 //        al.add("javascript");
 
-//        arrayAdapter = new ArrayAdapter<>(this, R.layout.item, R.id.helloText, al );
         myAppAdapter = new MyAppAdapter(al, MainActivity.this);
         flingContainer.setAdapter(myAppAdapter);
         flingContainer.setFlingListener(new SwipeFlingAdapterView.onFlingListener() {
@@ -249,6 +256,7 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
             }
         });
 
+        // Display long details panel when card is clicked on
         // Optionally add an OnItemClickListener
         flingContainer.setOnItemClickListener(new SwipeFlingAdapterView.OnItemClickListener() {
             @Override
@@ -265,32 +273,7 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
             }
         });
 
-        //facebook logout button logic
-        buttonLogout = (TextView) findViewById(R.id.buttonLogout);
-        if (buttonLogout != null) {
-            System.out.println("button logout is not null");
-            buttonLogout.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    PrefUtils.clearCurrentUser(MainActivity.this);
-
-                    // We can logout from facebook by calling following method
-                    LoginManager.getInstance().logOut();
-
-                    //Return to login page
-                    Intent i = new Intent(MainActivity.this, LoginActivity.class);
-                    startActivity(i);
-                    finish();
-                }
-            });
-        } else {
-            System.out.println("button logout is null");
-        }
     } //end method onCreate()
-
-    static void makeToast(Context ctx, String s) {
-        Toast.makeText(ctx, s, Toast.LENGTH_SHORT).show();
-    }
 
     @OnClick(R.id.right)
     public void right() {
@@ -314,7 +297,7 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
         public static FrameLayout background;
         public TextView DataText;
         public ImageView cardImage;
-        public Button playVideoButton;
+        public ImageButton playVideoButton;
 
     }
 
@@ -344,13 +327,11 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
         }
 
         @Override
+        //Performs loading of profile data
         public View getView(final int position, View convertView, ViewGroup parent) {
-
             View rowView = convertView;
 
-
             if (rowView == null) {
-
                 LayoutInflater inflater = getLayoutInflater();
 
                 //This is where item.xml is displayed
@@ -361,7 +342,7 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
                 viewHolder.background = (FrameLayout) rowView.findViewById(R.id.background);
                 viewHolder.cardImage = (ImageView) rowView.findViewById(R.id.profile_image);
                 //get play video button
-                viewHolder.playVideoButton = (Button) rowView.findViewById(R.id.play_video_button);
+                viewHolder.playVideoButton = (ImageButton) rowView.findViewById(R.id.play_video_button);
                 rowView.setTag(viewHolder);
 
             } else {
@@ -386,7 +367,7 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
                 });
             }
             catch (Exception e){
-                System.out.println("Button listener cannot be added");
+                System.out.println("Error when playing video.");
             }
 
             return rowView;
@@ -396,6 +377,10 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
     public static void removeBackground() {
         viewHolder.background.setVisibility(View.GONE);
         myAppAdapter.notifyDataSetChanged();
+    }
+
+    static void makeToast(Context ctx, String s) {
+        Toast.makeText(ctx, s, Toast.LENGTH_SHORT).show();
     }
 
     private void showHideLongDetailsPanel(View view) {
@@ -455,5 +440,38 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
         RatingBar ratingBar = (RatingBar) view.findViewById(R.id.ratingBar);
         float starRating = Float.parseFloat(cardData.getRating());
         ratingBar.setRating(starRating);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Menu icons are inflated just as they were with actionbar
+        // This adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.facebookLogout:
+                //makeToast(MainActivity.this,"Logout");
+                facebookLogout();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void facebookLogout() {
+        PrefUtils.clearCurrentUser(MainActivity.this);
+
+        // We can logout from facebook by calling following method
+        LoginManager.getInstance().logOut();
+
+        //Return to login page
+        Intent i = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(i);
+        finish();
     }
 }

@@ -6,28 +6,49 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <android.support.v7.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:contentInsetLeft="60dp"
+        app:contentInsetStart="60dp">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/name7" />
+
+    </android.support.v7.widget.Toolbar>
+
     <!-- activity view -->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#dee3e6">
-
-        <com.example.dswipecards.tindercard.SwipeFlingAdapterView
-            android:id="@+id/frame"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#dee3e6"
-            app:rotation_degrees="15.5" />
+        android:background="@color/colorOffWhite">
 
         <TextView
             android:id="@+id/buttonLogout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:background="#494949"
+            android:background="#acacac"
             android:padding="5dp"
             android:text="Logout"
-            android:textColor="#fff" />
+            android:textColor="#fff"
+            android:visibility="gone" />
+
+        <com.example.dswipecards.tindercard.SwipeFlingAdapterView
+            android:id="@+id/frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorOffWhite"
+            app:rotation_degrees="15.5" />
 
     </FrameLayout>
 
