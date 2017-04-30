@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">myAngel</string>
+    <string name="app_name">Angel</string>
     <string name="facebook_app_id">1076090482518041</string>
     <string name="title_activity_logout">logout screen</string>
 </resources>

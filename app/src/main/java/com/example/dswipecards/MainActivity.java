@@ -67,30 +67,84 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
             al.add(new CardData(
                     "http://www.benairyresearch.net/dev/img01.jpg",
                     "http://www.benairyresearch.net/dev/Video1.mp4",
-                    "Leo, 28\nMacquarie University",
-                    "Macquarie University",
+                    "Luke, 28\nDJ at Booms Music",
+                    "DJ at Booms Music",
                     "5",
-                    "Sand, surf and sun. Love food, oysters, cheese, beach, long walks, " +
-                            "good chats, music, good music, parties and laughter." +
-                            "\n\nI love Australia!",
+                    "House music. Beach vacations. Sushi.",
                     "4"));
             al.add(new CardData(
                     "http://www.benairyresearch.net/dev/img02.jpg",
                     "http://www.benairyresearch.net/dev/Video2.mp4",
-                    "Harry, 32\nUniSys",
-                    "UniSys",
+                    "Harry, 32\nMacquarie University",
+                    "Macquarie University",
                     "1",
-                    "Hook me up for good wine and party anytime.",
+                    "Good wine and party anytime.",
                     "5"));
-//            al.add(new CardData("http://www.benairyresearch.net/dev/img03.jpg", "3. Joe, 29\nColes", "http://www.benairyresearch.net/dev/myVid02.mp4"));
-//            al.add(new CardData("http://www.benairyresearch.net/dev/img04.jpg", "4. Brad, 21\nIBM", "http://www.benairyresearch.net/dev/myVid02.mp4"));
-//            al.add(new CardData("http://www.benairyresearch.net/dev/img05.jpg", "5. Lucy, 30\nMyer", "http://www.benairyresearch.net/dev/myVid02.mp4"));
-//            al.add(new CardData("http://www.benairyresearch.net/dev/img06.jpg", "6. Angel, 35\nPriceline", "http://www.benairyresearch.net/dev/myVid02.mp4"));
-//            al.add(new CardData("http://www.benairyresearch.net/dev/img07.jpg", "7. Jane, 32\nNoni B", "http://www.benairyresearch.net/dev/myVid02.mp4"));
-//            al.add(new CardData("http://www.benairyresearch.net/dev/img08.jpg", "8. Jenni, 30\nHollier", "http://www.benairyresearch.net/dev/myVid02.mp4"));
-//            al.add(new CardData("http://www.benairyresearch.net/dev/img09.jpg", "9. Amy, 39\nMacquarie University, 2007", "http://www.benairyresearch.net/dev/myVid02.mp4"));
-//            al.add(new CardData("http://www.benairyresearch.net/dev/img10.jpg", "10. April, 35\nTech", "http://www.benairyresearch.net/dev/myVid02.mp4"));
-//
+            al.add(new CardData(
+                    "http://www.benairyresearch.net/dev/img03.jpg",
+                    "http://www.benairyresearch.net/dev/Video3.mp4",
+                    "Sean, 24\nTruro College",
+                    "Truro College",
+                    "10",
+                    "Just looking for someone to share a cup of hot chocolate when it's cold outside.",
+                    "2"));
+            al.add(new CardData(
+                    "http://www.benairyresearch.net/dev/img04.jpg",
+                    "http://www.benairyresearch.net/dev/Video4.mp4",
+                    "Jon, 42\nCEO",
+                    "CEO",
+                    "7",
+                    "Come let's go to the other side of the world where it's only YOU and ME...",
+                    "3"));
+            al.add(new CardData(
+                    "http://www.benairyresearch.net/dev/img05.jpg",
+                    "http://www.benairyresearch.net/dev/Video5.mp4",
+                    "Charlotte, 32\nSenior Talent Agent",
+                    "Senior Talent Agent",
+                    "1",
+                    "My face is a 4. My personality is a 6. So basically I'm a 10.",
+                    "5"));
+            al.add(new CardData(
+                    "http://www.benairyresearch.net/dev/img06.jpg",
+                    "http://www.benairyresearch.net/dev/Video6.mp4",
+                    "Tori, 33\nMedical Sales Rep",
+                    "Medical Sales Rep",
+                    "10",
+                    "Laughing is the best medicine. Send a joke my way.",
+                    "3"));
+            al.add(new CardData(
+                    "http://www.benairyresearch.net/dev/img07.jpg",
+                    "http://www.benairyresearch.net/dev/Video7.mp4",
+                    "Misty, 22\nUNSW",
+                    "UNSW",
+                    "1",
+                    "Nature lover, hiker, yoga instructor, foodie, smart, dog lover, writer.",
+                    "4"));
+            al.add(new CardData(
+                    "http://www.benairyresearch.net/dev/img08.jpg",
+                    "http://www.benairyresearch.net/dev/Video8.mp4",
+                    "Nao, 28\nExecutive Assistance",
+                    "Executive Assistance",
+                    "6",
+                    "I love long walks in the park with my puppy and I'm looking for someone to walk with me.",
+                    "4"));
+            al.add(new CardData(
+                    "http://www.benairyresearch.net/dev/img09.jpg",
+                    "http://www.benairyresearch.net/dev/Video9.mp4",
+                    "Rico, 24\nUniversity of Technology Sydney",
+                    "University of Technology Sydney",
+                    "2",
+                    "Half Swiss Half Colombian in Australia 8 years.",
+                    "3"));
+            al.add(new CardData(
+                    "http://www.benairyresearch.net/dev/img10.jpg",
+                    "http://www.benairyresearch.net/dev/Video10.mp4",
+                    "Hayley, 33\nMake-up Artist",
+                    "Make-up Artist",
+                    "11",
+                    "I love to stay fit and healthy. I enjoy running and anything outdoors.",
+                    "5"));
+
 //            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "11. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
 //            al.add(new CardData("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "12. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
 //            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "13. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -9,23 +10,48 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background_gradient"
     tools:context="com.example.dswipecards.LoginActivity">
+
+    <TextView
+        android:id="@+id/spacer1"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:srcCompat="@drawable/logo_loginpage"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/spacer2"
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="This is the log in page" />
+        android:text="Welcome to Angel."
+        android:layout_gravity="center_horizontal"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
     <TextView
+        android:id="@+id/spacer3"
+        android:layout_width="match_parent"
+        android:layout_height="120dp" />
+
+    <Button
         android:id="@+id/btnLogin"
+        style="@style/com_facebook_loginview_default_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:background="#494949"
-        android:padding="16dp"
-        android:text="Log in with Facebook"
-        android:textColor="#fff" />
+        android:layout_gravity="center_horizontal"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:text="Log in with Facebook" />
 
     <!--set visibility to gone - hides the button-->
     <com.facebook.login.widget.LoginButton
@@ -37,4 +63,4 @@
         android:layout_marginTop="30dp"
         android:visibility="gone" />
 
-</RelativeLayout>
+</LinearLayout>

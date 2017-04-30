@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private CallbackManager callbackManager;
     private LoginButton loginButton;
-    private TextView btnLogin;
+    private Button btnLogin;
     //private ProgressDialog progressDialog;
     User user;
 
@@ -57,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
         loginButton = (LoginButton) findViewById(R.id.login_button); //facebook button
         loginButton.setReadPermissions("public_profile", "email", "user_friends");
 
-        btnLogin = (TextView) findViewById(R.id.btnLogin); //our custom button
+        btnLogin = (Button) findViewById(R.id.btnLogin); //our custom button
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -110,7 +111,7 @@ public class LoginActivity extends AppCompatActivity {
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
-                            Toast.makeText(LoginActivity.this, "welcome " + user.name, Toast.LENGTH_LONG).show();
+                            Toast.makeText(LoginActivity.this, "Welcome " + user.name + "!", Toast.LENGTH_LONG).show();
 //                            Intent intent = new Intent(LoginActivity.this, LogoutActivity.class);
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent);
