@@ -102,13 +102,14 @@
                 android:layout_weight="1"
                 android:gravity="start|center_vertical"
                 android:textColor="#606060"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 tools:text="Name, Age." />
 
             <ImageButton
                 android:id="@+id/play_video_button"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
                 android:background="@drawable/play" />
 
         </LinearLayout>
@@ -132,32 +133,32 @@
             android:id="@+id/long_name_age"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#606060"
-            android:textSize="20sp"
+            android:textColor="#1a1919"
+            android:textSize="15sp"
             android:text="Johnny, 29"/>
 
         <TextView
             android:id="@+id/work_study_location"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#606060"
-            android:textSize="20sp"
+            android:textColor="#a7a2a2"
+            android:textSize="13sp"
             android:text="UNSW"/>
 
         <TextView
             android:id="@+id/distance_away"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#bababa"
-            android:textSize="18sp"
-            android:text="1 km away"/>
+            android:text="1 km away"
+            android:textColor="#c4bebe"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
 
         <TextView
             android:id="@+id/separator"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             android:layout_width="match_parent"
-            android:layout_height="5px"
+            android:layout_height="2px"
             android:text=" "
             android:background="#e4e4e4"/>
 
@@ -166,7 +167,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:textColor="#7e7e7e"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:gravity="center_vertical"
             android:text="I love coffee."/>
 
@@ -175,7 +176,7 @@
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             android:layout_width="match_parent"
-            android:layout_height="5px"
+            android:layout_height="2px"
             android:text=" "
             android:background="#e4e4e4" />
 

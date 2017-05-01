@@ -112,6 +112,7 @@ public class LoginActivity extends AppCompatActivity {
                                 e.printStackTrace();
                             }
                             Toast.makeText(LoginActivity.this, "Welcome " + user.name + "!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(LoginActivity.this, "Welcome " + user.name + "!", Toast.LENGTH_LONG).show();
 //                            Intent intent = new Intent(LoginActivity.this, LogoutActivity.class);
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent);

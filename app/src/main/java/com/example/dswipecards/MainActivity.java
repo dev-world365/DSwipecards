@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
                     "Luke, 28\nDJ at Booms Music",
                     "DJ at Booms Music",
                     "5",
-                    "House music. Beach vacations. Sushi.",
+                    "House music. Beach vacations. Sushi.\n\nLiving in Coogee",
                     "4"));
             al.add(new CardData(
                     "http://www.benairyresearch.net/dev/img02.jpg",
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
                     "Harry, 32\nMacquarie University",
                     "Macquarie University",
                     "1",
-                    "Good wine and party anytime.",
+                    "Good wine and party anytime. I'm a great listener and a true gentleman.\n\nAnd most important I'll put a smile on your face!",
                     "5"));
             al.add(new CardData(
                     "http://www.benairyresearch.net/dev/img03.jpg",
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
                     "Sean, 24\nTruro College",
                     "Truro College",
                     "10",
-                    "Just looking for someone to share a cup of hot chocolate when it's cold outside.",
+                    "Just looking for someone to share a cup of hot chocolate when it's cold outside.\n\nFamily and friends mean a lot to me.",
                     "2"));
             al.add(new CardData(
                     "http://www.benairyresearch.net/dev/img04.jpg",
@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
                     "Charlotte, 32\nSenior Talent Agent",
                     "Senior Talent Agent",
                     "1",
-                    "My face is a 4. My personality is a 6. So basically I'm a 10.",
+                    "My face is a 4. My personality is a 6. So basically I'm a 10.\n\nLet's start with dates. Sweet dates.",
                     "5"));
             al.add(new CardData(
                     "http://www.benairyresearch.net/dev/img06.jpg",
@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
                     "Rico, 24\nUniversity of Technology Sydney",
                     "University of Technology Sydney",
                     "2",
-                    "Half Swiss Half Colombian in Australia 8 years.",
+                    "Half Swiss Half Colombian in Australia 8 years. Looking to meet some cool people who want to laugh today and not worry about tomorrow.",
                     "3"));
             al.add(new CardData(
                     "http://www.benairyresearch.net/dev/img10.jpg",
@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
                     "Hayley, 33\nMake-up Artist",
                     "Make-up Artist",
                     "11",
-                    "I love to stay fit and healthy. I enjoy running and anything outdoors.",
+                    "I love to stay fit and healthy. I enjoy running and anything outdoors. ",
                     "5"));
 
 //            al.add(new CardData("http://www.benairyresearch.net/dev/shape.jpg", "11. ", "http://www.benairyresearch.net/dev/myVid03.mp4"));
@@ -438,6 +438,7 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
     }
 
     private void showHideLongDetailsPanel(View view) {
+        ImageButton playVidButton = (ImageButton) view.findViewById(R.id.play_video_button);
         LinearLayout longDetailsPanel = (LinearLayout) view.findViewById(R.id.long_details_panel);
         float top = longDetailsPanel.getTop();
         float bottom = longDetailsPanel.getBottom();
@@ -461,9 +462,15 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
             heightAnimator.setInterpolator(new AccelerateInterpolator());
             heightAnimator.start();
 
+            //hide away play video button when panel slides up
+            playVidButton.setVisibility(View.GONE);
+
         } else {
             Log.d("alpha","alpha is 1");
             longDetailsPanel.setAlpha(0); //set details panel to transparent if it is shown
+
+            //bring back play video button when panel slides down
+            playVidButton.setVisibility(View.VISIBLE);
         }
     }
 
