@@ -2,10 +2,6 @@ package com.example.dswipecards;
 
 import android.content.Context;
 
-/**
- * Created by Cammy_PC on 07-Jan-17.
- */
-
 public class PrefUtils {
 
     public static void setCurrentUser(User currentUser, Context ctx) {

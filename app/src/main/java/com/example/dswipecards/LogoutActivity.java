@@ -16,10 +16,6 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-/**
- * Created by Cammy_PC on 07-Jan-17.
- */
-
 public class LogoutActivity extends AppCompatActivity {
 
     private TextView btnLogout;

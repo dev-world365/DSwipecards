@@ -33,14 +33,14 @@ dependencies {
 
     // start - Added from diolor/Swipecards-master library
     // Google Play Services
-    //compile 'com.google.android.gms:play-services:9.4.0' -cammy comment away to resolve dex issue when running app
+    //compile 'com.google.android.gms:play-services:9.4.0' -comment away to resolve dex issue when running app
 
     // Support Libraries
     //compile 'com.android.support:appcompat-v7:24.2.0'
     compile 'com.android.support:cardview-v7:25.0.0'
     compile 'com.android.support:design:25.0.0'
     compile 'com.android.support:gridlayout-v7:25.0.0'
-    //compile 'com.android.support:leanback-v17:24.2.0' - cammy comment away to resolve leanback support issue in manifest
+    //compile 'com.android.support:leanback-v17:24.2.0' -comment away to resolve leanback support issue in manifest
     compile 'com.android.support:mediarouter-v7:25.0.0'
     compile 'com.android.support:palette-v7:25.0.0'
     compile 'com.android.support:recyclerview-v7:25.0.0'

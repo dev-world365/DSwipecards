@@ -1,9 +1,5 @@
 package com.example.dswipecards;
 
-/**
- * Created by Cammy_PC on 07-Jan-17.
- */
-
 public class User {
     public String name;
     public String email;

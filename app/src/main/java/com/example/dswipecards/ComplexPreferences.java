@@ -9,7 +9,6 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 
 /**
- * Created by Cammy_PC on 07-Jan-17.
  * This class helps to store class object in the shared preferences
  */
 
