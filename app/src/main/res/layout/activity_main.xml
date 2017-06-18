@@ -22,7 +22,7 @@
             android:id="@+id/logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/name7" />
+            android:src="@drawable/name_logo" />
 
     </android.support.v7.widget.Toolbar>
 
