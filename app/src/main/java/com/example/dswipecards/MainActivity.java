@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //ButterKnife.inject(this);
 
         //Load Actionbar with app logo
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
