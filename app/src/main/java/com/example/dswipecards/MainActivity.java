@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
         //Load Actionbar with app logo
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setLogo(R.drawable.name_logo);
+        toolbar.setLogo(R.drawable.name7);
 
         flingContainer = (SwipeFlingAdapterView) findViewById(R.id.frame);
 
@@ -292,22 +292,22 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
             Glide.with(MainActivity.this).load(cardDataList.get(position).getImagePath()).into(viewHolder.cardImage);
 
             //Start to play video when button is clicked
-//            try {
-//                viewHolder.playVideoButton.setOnClickListener(new View.OnClickListener() {
-//                    public void onClick(View view) {
-//
-//                        //Start a new Activity to play video on a new page
-//                        Intent intent = new Intent(view.getContext(), PlayVideoActivity.class);
-//                        //pass over the videoPath
-//                        String videoPath = cardDataList.get(position).getVideoPath();
-//                        intent.putExtra("VideoPath", videoPath);
-//                        startActivity(intent);
-//                    }
-//                });
-//            }
-//            catch (Exception e){
-//                System.out.println("Error when playing video.");
-//            }
+            try {
+                viewHolder.playVideoButton.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View view) {
+
+                        //Start a new Activity to play video on a new page
+                        Intent intent = new Intent(view.getContext(), PlayVideoActivity.class);
+                        //pass over the videoPath
+                        String videoPath = cardDataList.get(position).getVideoPath();
+                        intent.putExtra("VideoPath", videoPath);
+                        startActivity(intent);
+                    }
+                });
+            }
+            catch (Exception e){
+                System.out.println("Error when playing video.");
+            }
 
             return rowView;
         }
@@ -348,14 +348,14 @@ public class MainActivity extends AppCompatActivity implements FlingCardListener
             heightAnimator.start();
 
             //hide away play video button when panel slides up
-//            playVidButton.setVisibility(View.GONE);
+            playVidButton.setVisibility(View.GONE);
 
         } else {
             Log.d("alpha","alpha is 1");
             longDetailsPanel.setAlpha(0); //set details panel to transparent if it is shown
 
             //bring back play video button when panel slides down
-//            playVidButton.setVisibility(View.VISIBLE);
+            playVidButton.setVisibility(View.VISIBLE);
         }
     }
 
