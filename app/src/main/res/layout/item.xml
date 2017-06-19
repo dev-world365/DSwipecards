@@ -110,7 +110,8 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_gravity="center"
-                android:background="@drawable/play" />
+                android:background="@drawable/play"
+                android:visibility="gone" />
 
         </LinearLayout>
 
@@ -178,8 +179,7 @@
             android:layout_width="match_parent"
             android:layout_height="2px"
             android:text=" "
-            android:background="#e4e4e4"
-            android:visibility="gone"/>
+            android:background="#e4e4e4" />
 
         <RatingBar
             android:id="@+id/ratingBar"
@@ -190,8 +190,7 @@
             android:isIndicator="true"
             android:numStars="5"
             android:rating="3"
-            android:layout_gravity="end"
-            android:visibility="gone"/>
+            android:layout_gravity="end"/>
 
     </LinearLayout>
 
